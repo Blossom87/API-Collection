@@ -1,6 +1,7 @@
 package fr.afpa.apicollec;
 
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,5 +31,8 @@ public class App {
 		System.err.println("TEST + " + test1);
 		boolean test2 = WordCounter.isValid("C)");
 		System.err.println("TEST + " + test2);
+
 	}
 }
+
+// TO PUSH : https://stackoverflow.com/questions/13925454/check-if-string-is-a-punctuation-character

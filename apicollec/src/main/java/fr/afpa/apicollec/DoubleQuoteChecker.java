@@ -3,6 +3,9 @@ package fr.afpa.apicollec;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class DoubleQuoteChecker {
 
     /**
@@ -26,11 +29,11 @@ public class DoubleQuoteChecker {
                 // aussi si chevron ouvrant -> on ajoute un élément à la pile chevron
             } else if (ch == '<') {
                 chevron.push(ch);
-            } else if (ch == '>') {
+            } else if (ch == '>') { // si chevron fermant, on enlève l'élément de la pile
                 if (chevron.isEmpty() || chevron.pop() == '>') {
                     return false;
                 }
-            } else if (ch == ')') {
+            } else if (ch == ')') { // si parenthèse fermante, on enlève l'élément de la pile 
                 if (paranthese.isEmpty() || paranthese.pop() == ')') {
                     return false;
                 }
